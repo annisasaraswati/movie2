@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","movie");
+$conn = mysqli_connect("localhost","root","","db_movie");
 
 //check connection
 if(mysqli_connect_errno()){

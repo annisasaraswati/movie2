@@ -1,7 +1,6 @@
 <?php
 require_once 'connect.php';
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +10,9 @@ require_once 'connect.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -73,7 +74,7 @@ require_once 'connect.php';
         <!-- End About -->
 
 
-        <!--movie-->
+        <!--carousel movie-->
         <div id="movie" class="mb-5">
             <h3 class="mb-4 text-center">Movie You Like</h3>
             <div class="bd-example">
@@ -85,17 +86,17 @@ require_once 'connect.php';
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="photo/1.jpg" class="d-block w-100" alt="">
+                            <img src="images/banner/banner-1.jpg" class="d-block w-100" alt="">
                             <div class="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="photo/2.jpg" class="d-block w-100" alt="">
+                            <img src="images/banner/banner-2.jpg" class="d-block w-100" alt="">
                             <div class="carousel-caption d-none d-md-block">
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="photo/3.jpg" class="d-block w-100" alt="">
+                            <img src="images/banner/banner-3.jpg" class="d-block w-100" alt="">
                             <div class="carousel-caption d-none d-md-block">
                             </div>
                         </div>
@@ -115,24 +116,24 @@ require_once 'connect.php';
     <!--end product-->
 
     <!--list movie-->
-    <div id="list" class="mb-5">
-        <h3 class="mb-4 text-center">List Film Minggu Ini</h3>
+    <div class="movie-selection-header" style="height: 41px; text-align: center; width: 100%; margin: auto; padding: 50px;">
+        <h2>List Film Minggu Ini</h2>
     </div>
 
-        <div class="card-group">
-        <?php
-            $mv = $conn->query("SELECT * FROM movie");
-            while ($data = $mv->fetch_assoc()):  
+    <!-- oiya lupa gaada datanya hehe  -->
+    <div class="row" style="margin: 30px;">
+    <?php
+            $mv = $conn->query("SELECT * FROM movies");
+            while ($data = $mv->fetch_assoc()):
         ?>
-            <div class="card" style="width:300px; margin:10px;">
-                <img class="card-img-top" src="photo/8.jpg" alt="Card image cap">
-                <div class="card-body text-center">
-                    <h5 class="card-title" style="padding: auto;"><?= $data['nama_movie']?></h5>
-                    <p class="card-text">Comedy Thriller</p>
-                </div>
-                <a href="detail.php?id=<?=$data['id']?>" class="btn btn-secondary">Detail..</a>
-             </div>
-        <?php endwhile ?>
+        <div class="card" style="width:300px; margin: 10px;">
+            <img class="card-img-top" src="images/lak.jpg" alt="Picture in here">
+            <div class="card-body text-center">
+                <h4 class="card-title" style="padding: auto;">Ini Judulnya</h4>
+                 <a href="detail.php" class="btn btn-secondary" >See Detail</a>
+            </div>
+        </div>
+        <?php endwhile?>
     </div>
     <!--end list-->
 
@@ -174,10 +175,10 @@ require_once 'connect.php';
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="bootstrap/js/jquery.min.js"></script>
+    <!-- <script src="bootstrap/js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script> -->
 </body>
 
 </html>
