@@ -63,8 +63,8 @@ include 'connect.php';
         <form method="POST" action="update.php" enctype="multipart/form-data" class="needs-validation" novalidate>
             <input name="id" value="<?php echo $data['id_movie']; ?>"  hidden />
             <div class="form-group">
-                <label for="title">Title:</label>
-                <input type="text" class="form-control" name="title" value="<?php echo $data['nama_movie']; ?>" required>
+                <label for="nama">Title:</label>
+                <input type="text" class="form-control" name="nama" value="<?php echo $data['nama_movie']; ?>" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
             </div>
@@ -84,13 +84,6 @@ include 'connect.php';
             </div>
 
             <div class="form-group">
-                <label for="production">Production:</label>
-                <input type="text" class="form-control" name="production"  value="<?php echo $data['production']; ?>" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
- 
-            <div class="form-group">
                 <label for="cast">Cast:</label>
                 <input type="text" class="form-control" name="cast"  value="<?php echo $data['cast']; ?>" required>
                 <div class="valid-feedback">Valid.</div>
@@ -98,14 +91,14 @@ include 'connect.php';
             </div>
 
             <div class="form-group">
-                <label for="synopsis">Synopsis:</label>
-                <input type="textarea" rows="5" class="form-control" name="synopsis"  value="<?php echo $data['synopsis']; ?>" required>
-                <!-- <textarea class="form-control" rows="5" name="synopsis" value="<?php echo $data['synopsis']; ?>"></textarea> -->
+                <label for="synopsis">Sinopsis:</label>
+                <input type="textarea" rows="5" class="form-control" name="sinopsis"  value="<?php echo $data['sinopsis']; ?>" required>
+                <!-- <textarea class="form-control" rows="5" name="synopsis" value="<?php echo $data['sinopsis']; ?>"></textarea> -->
             </div>
 
             <div class="form-group">
                 <label>Image:</label><br>
-                <img src="image/<?php echo $data['img']; ?>" style="width: 120px;float: left;margin-bottom: 5px;"><br><br><br><br><br><br><br><br>
+                <img src="photo/<?php echo $data['img']; ?>" style="width: 120px;float: left;margin-bottom: 5px;"><br><br><br><br><br><br><br><br>
                 <input type="file" name="img" required="" />
                 <p style="color: red">Ekstensi yang diperbolehkan .png | .jpg | .jpeg </p>
                 <i style="float: left;font-size: 11px;color: red">Abaikan jika tidak merubah gambar produk</i><br><br>

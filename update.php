@@ -3,8 +3,8 @@
 include 'connect.php';
 
 	// membuat variabel untuk menampung data dari form
-  $id             = $_POST['id_movie'];
-  $nama           = $_POST['nama_movie'];
+  $id             = $_POST['id'];
+  $nama           = $_POST['nama'];
   $genre          = $_POST['genre'];
   $cast           = $_POST['cast'];
   $trailer        = $_POST['trailer'];
@@ -20,12 +20,12 @@ include 'connect.php';
     $angka_acak     = rand(1,999);
     $new_img = $angka_acak.'-'.$img; //menggabungkan angka acak dengan nama file sebenarnya
     if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {
-                  move_uploaded_file($file_tmp, 'image/'.$new_img); //memindah file gambar ke folder gambar
+                  move_uploaded_file($file_tmp, 'photo/'.$new_img); //memindah file gambar ke folder gambar
                       
                     // jalankan query UPDATE berdasarkan ID yang produknya kita edit
-                   $query  = "UPDATE movies SET nama_movie = '$nama', genre = '$genre', cast = '$cast', trailer = '$trailer', 
-                            sinopsis = '$sinopsis', img = '$new_img'";
-                    $query .= "WHERE id = '$id'";
+                   $query  = "UPDATE movies SET nama_movie = '$nama', genre = '$genre', cast = '$cast', 
+                   trailer = '$trailer', sinopsis = '$sinopsis', img = '$new_img'";
+                    $query .= "WHERE id_movie = '$id'";
                     $result = mysqli_query($conn, $query);
                     // periska query apakah ada error
                     if(!$result){
@@ -44,7 +44,7 @@ include 'connect.php';
       // jalankan query UPDATE berdasarkan ID yang produknya kita edit
       $query  = "UPDATE movies SET nama_movie = '$nama', genre = '$genre', cast = '$cast', trailer = '$trailer', 
       sinopsis = '$sinopsis'";
-      $query .= "WHERE id = '$id'";
+      $query .= "WHERE id_movie = '$id'";
       $result = mysqli_query($conn, $query);
       // periska query apakah ada error
       if(!$result){
@@ -54,5 +54,6 @@ include 'connect.php';
         //tampil alert dan akan redirect ke halaman home.php
         //silahkan ganti home.php sesuai halaman yang akan dituju
           echo "<script>alert('Data berhasil diubah.');window.location='index.php';</script>";
+          print_r($result);
       }
     }

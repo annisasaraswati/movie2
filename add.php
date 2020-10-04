@@ -8,7 +8,7 @@ include 'connect.php';
     $cast           = $_POST['cast'];
     $trailer        = $_POST['trailer'];
     $trailer        = explode('=', $trailer);
-    $trailer        = $trailer['1'];
+    $trailer        = $trailer[1];
     $sinopsis       = $_POST['sinopsis'];
 
     $rand           = rand();
@@ -22,8 +22,8 @@ if(!in_array($ext,$ekstensi)){
 } else {
     if($ukuran < 1044070){
         $pict = $rand.''.$img;
-        move_uploaded_file($_FILES['img']['tmp_name'], 'image/'.$rand.''.$img);
-        mysqli_query($conn, "insert into movies values ('', '$nama_movie','$genre','$cast','$trailer','$sinopsis')");
+        move_uploaded_file($_FILES['img']['tmp_name'], 'photo/'.$rand.''.$img);
+        mysqli_query($conn, "insert into movies values ('', '$nama_movie','$genre','$cast','$trailer','$sinopsis', '$pict')");
 
         header("location:index.php?alert=berhasil");
     } else {

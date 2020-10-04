@@ -123,9 +123,9 @@ require_once 'connect.php';
             while ($data = $mv->fetch_assoc()):
         ?>
         <div class="card" style="width:300px; margin: 10px;">
-            <img class="card-img-top" src="photo/dolitle.jpg" alt="Picture in here">
+            <img class="card-img-top" src="photo/<?= $data['img']?>" alt="Picture in here">
             <div class="card-body text-center">
-                <h4 class="card-title" style="padding: auto;">Dolitle</h4>
+                <h4 class="card-title" style="padding: auto;"><?php echo $data['nama_movie']?></h4>
                  <a href="detail.php?id=<?=$data['id_movie']?>" class="btn btn-secondary" >See Detail</a>
             </div>
         </div>
