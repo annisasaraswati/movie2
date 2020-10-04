@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2020 at 11:05 AM
+-- Generation Time: Oct 03, 2020 at 07:03 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.31
 
@@ -55,8 +55,16 @@ CREATE TABLE `movies` (
   `genre` varchar(50) DEFAULT NULL,
   `cast` varchar(100) DEFAULT NULL,
   `trailer` varchar(100) NOT NULL,
-  `sinopsis` varchar(200) NOT NULL
+  `sinopsis` varchar(200) NOT NULL,
+  `img` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `movies`
+--
+
+INSERT INTO `movies` (`id_movie`, `nama_movie`, `genre`, `cast`, `trailer`, `sinopsis`, `img`) VALUES
+(2, 'Dolittle', 'Comedy', 'Emma Thompson, Rami Malek, John Cena, Kumail Nanjiani, Octavia Spencer, Tom Holland, Craig Robinson,', 'FEf412bSPLs', 'Dokter hewan John Dolittle hidup menyendiri setelah kehilangan istrinya yang wafat tujuh tahun yang lalu. Dolittle menutup klinik yang awal mulanya selalu terbuka baik untuk manusia maupun hewan. ', '');
 
 --
 -- Indexes for dumped tables
@@ -82,7 +90,7 @@ ALTER TABLE `movies`
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `id_movie` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_movie` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
